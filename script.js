@@ -1,16 +1,38 @@
-"use strict";
 
-// Preserve the original hover and keyboard-focus reveal behavior.
-document.querySelectorAll(".eyes").forEach((eyes) => {
-    const updateVisibility = () => {
-        const visible = eyes.matches(":hover") || document.activeElement === eyes;
-        eyes.classList.toggle("is-visible", visible);
-    };
+let eyes = document.getElementsByClassName("eyes");
 
-    eyes.addEventListener("mouseenter", updateVisibility);
-    eyes.addEventListener("mouseleave", updateVisibility);
-    eyes.addEventListener("focus", updateVisibility);
-    eyes.addEventListener("blur", updateVisibility);
-    updateVisibility();
-    eyes.classList.add("js-enabled");
-});
+for (let i = 0; i < eyes.length; i++) {
+    let mouseInside = false;
+    let keyboardFocused = false;
+
+    //eyes opacity
+    function updateVisibility() {
+        if (mouseInside) {
+            eyes[i].style.opacity = 1;
+        } else if (keyboardFocused) {
+            eyes[i].style.opacity = 1;
+        } else {
+            eyes[i].style.opacity = 0;
+        }
+    }
+    //when to show to eyes
+    eyes[i].addEventListener("mouseenter", function() {
+        mouseInside = true;
+        updateVisibility();
+    });
+
+    eyes[i].addEventListener("mouseleave", function() {
+        mouseInside = false;
+        updateVisibility();
+    });
+
+    eyes[i].addEventListener("focus", function() {
+        keyboardFocused = true;
+        updateVisibility();
+    });
+
+    eyes[i].addEventListener("blur", function() {
+        keyboardFocused = false;
+        updateVisibility();
+    });
+}

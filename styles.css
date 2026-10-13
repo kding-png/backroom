@@ -371,9 +371,8 @@ main {
 }
 
 /* The invisible area still responds to hovering. */
-.eyes:not(.js-enabled):hover,
-.eyes:not(.js-enabled):focus,
-.eyes.is-visible {
+.eyes:hover,
+.eyes:focus {
     opacity: 1;
 }
 
