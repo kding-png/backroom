@@ -6,7 +6,6 @@ html, body {
     background: #fff;
 }
 
-/* Avoid overflow:hidden on ancestors: it prevents viewport sticky positioning. */
 body {
     box-sizing: border-box;
     border-left: 7.5vw solid #000;
@@ -17,7 +16,7 @@ main {
     position: static;
 }
 
-/* 2. Fixed walking character */
+/* Fixed walking character */
 #walking-person {
     position: fixed;
     top: 50%;
@@ -29,14 +28,14 @@ main {
     pointer-events: none;
 }
 
-/* 3. Room containers */
+/* Room containers */
 .rooms {
     position: relative;
     width: 100%;
     height: 100vh;
 }
 
-/* Same size and alignment as the previous background-size: contain. */
+/* size and alignment */
 .scene {
     position: absolute;
     left: 50%;
@@ -46,7 +45,7 @@ main {
     aspect-ratio: 3508 / 2480;
 }
 
-/* 4. Static furniture groups */
+/* Static furniture groups - made with help of codex*/
 .sleep-area {
     position: absolute;
     left: 0;
@@ -56,7 +55,6 @@ main {
     z-index: 2;
 }
 
-/* Each object clips only its own section of the original transparent PNG. */
 .piece {
     position: absolute;
     overflow: hidden;
@@ -77,7 +75,7 @@ main {
     pointer-events: none;
 }
 
-/* 5. Walls and doors */
+/* Walls and doors */
 .wall {
     position: relative;
     height: 10px;
@@ -94,9 +92,9 @@ main {
     background-color: #000;
 }
 
-/* 6. Room 1: individual object coordinates */
+/* Room 1 */
 
-/* Room 1: bed; source coordinates (12, 1288), size 555 x 1163. */
+/* Room 1: bed*/
 #room-1-bed {
     left: 1.090909091%;
     top: 2.295081967%;
@@ -111,7 +109,7 @@ main {
     height: 213.241616509%;
 }
 
-/* Room 1: rug; source coordinates (641, 1454), size 454 x 569. */
+/* Room 1: rug */
 #room-1-rug {
     left: 58.272727273%;
     top: 15.901639344%;
@@ -126,7 +124,7 @@ main {
     height: 435.852372583%;
 }
 
-/* Room 1: desk; source coordinates (25, 76), size 846 x 1076. */
+/* Room 1: desk */
 #room-1-desk {
     left: 0.712656784%;
     top: 3.064516129%;
@@ -141,7 +139,7 @@ main {
     height: 230.483271375%;
 }
 
-/* Room 1: side-table; source coordinates (2943, 1484), size 463 x 916. */
+/* Room 1: side-table */
 #room-1-side-table {
     left: 83.893956670%;
     top: 59.838709677%;
@@ -156,7 +154,7 @@ main {
     height: 270.742358079%;
 }
 
-/* Room 1: lounge; source coordinates (2193, 90), size 1226 x 1345. */
+/* Room 1: lounge */
 #room-1-lounge {
     left: 62.514253136%;
     top: 3.629032258%;
@@ -171,9 +169,9 @@ main {
     height: 184.386617100%;
 }
 
-/* 7. Room 2: individual object coordinates */
+/* Room 2 */
 
-/* Room 2: bed; source coordinates (12, 1271), size 555 x 1180. */
+/* Room 2: bed */
 #room-2-bed {
     left: 1.090909091%;
     top: 0.901639344%;
@@ -188,7 +186,7 @@ main {
     height: 210.169491525%;
 }
 
-/* Room 2: rug; source coordinates (641, 1454), size 454 x 569. */
+/* Room 2: rug */
 #room-2-rug {
     left: 58.272727273%;
     top: 15.901639344%;
@@ -203,7 +201,7 @@ main {
     height: 435.852372583%;
 }
 
-/* Room 2: desk; source coordinates (25, 76), size 846 x 1076. */
+/* Room 2: desk */
 #room-2-desk {
     left: 0.712656784%;
     top: 3.064516129%;
@@ -218,7 +216,7 @@ main {
     height: 230.483271375%;
 }
 
-/* Room 2: side-table; source coordinates (2943, 1484), size 463 x 916. */
+/* Room 2: side-table */
 #room-2-side-table {
     left: 83.893956670%;
     top: 59.838709677%;
@@ -233,7 +231,7 @@ main {
     height: 270.742358079%;
 }
 
-/* Room 2: lounge; source coordinates (2193, 90), size 1226 x 1345. */
+/* Room 2: lounge */
 #room-2-lounge {
     left: 62.514253136%;
     top: 3.629032258%;
@@ -248,7 +246,7 @@ main {
     height: 184.386617100%;
 }
 
-/* Room 2: crack; source coordinates (1705, 0), size 196 x 2480. */
+/* Room 2: crack */
 #room-2-crack {
     left: 48.603192702%;
     top: 0.000000000%;
@@ -263,9 +261,9 @@ main {
     height: 100.000000000%;
 }
 
-/* 8. Room 3: individual object coordinates */
+/*  Room 3 */
 
-/* Room 3: bed; source coordinates (7, 1269), size 572 x 1193. */
+/* Room 3: bed */
 #room-3-bed {
     left: 0.636363636%;
     top: 0.737704918%;
@@ -280,7 +278,7 @@ main {
     height: 207.879295893%;
 }
 
-/* Room 3: rug; source coordinates (621, 1454), size 474 x 569. */
+/* Room 3: rug */
 #room-3-rug {
     left: 56.454545455%;
     top: 15.901639344%;
@@ -295,7 +293,7 @@ main {
     height: 435.852372583%;
 }
 
-/* Room 3: desk; source coordinates (9, 64), size 865 x 1111. */
+/* Room 3: desk. */
 #room-3-desk {
     left: 0.256556442%;
     top: 2.580645161%;
@@ -310,7 +308,7 @@ main {
     height: 223.222322232%;
 }
 
-/* Room 3: side-table; source coordinates (2915, 1474), size 491 x 926. */
+/* Room 3: side-table */
 #room-3-side-table {
     left: 83.095781072%;
     top: 59.435483871%;
@@ -325,7 +323,7 @@ main {
     height: 267.818574514%;
 }
 
-/* Room 3: lounge; source coordinates (2169, 88), size 1257 x 1347. */
+/* Room 3: lounge */
 #room-3-lounge {
     left: 61.830102623%;
     top: 3.548387097%;
@@ -340,7 +338,7 @@ main {
     height: 184.112843356%;
 }
 
-/* Room 3: portal; source coordinates (964, 0), size 1552 x 2480. */
+/* Room 3 */
 #room-3-portal {
     left: 27.480045610%;
     top: 0.000000000%;
@@ -355,7 +353,7 @@ main {
     height: 100.000000000%;
 }
 
-/* 9. Final room: one background repeated into 5 columns and 9 rows */
+/* eye */
 .eyes {
     position: absolute;
     left: 34%;
@@ -370,7 +368,6 @@ main {
     transition: opacity 0.35s ease;
 }
 
-/* The invisible area still responds to hovering. */
 .eyes:hover,
 .eyes:focus {
     opacity: 1;

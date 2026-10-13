@@ -16,6 +16,7 @@ for (let i = 0; i < eyes.length; i++) {
         }
     }
     //when to show to eyes
+    //"addeventlistener" is learned from codex
     eyes[i].addEventListener("mouseenter", function() {
         mouseInside = true;
         updateVisibility();
