@@ -1,0 +1,383 @@
+/* 1. Page and black side borders */
+
+html, body {
+    width: 100%;
+    margin: 0;
+    background: #fff;
+}
+
+/* Avoid overflow:hidden on ancestors: it prevents viewport sticky positioning. */
+body {
+    box-sizing: border-box;
+    border-left: 7.5vw solid #000;
+    border-right: 7.5vw solid #000;
+}
+
+main {
+    position: static;
+}
+
+/* 2. Fixed walking character */
+#walking-person {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 300px;
+    height: auto;
+    pointer-events: none;
+}
+
+/* 3. Room containers */
+.rooms {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Same size and alignment as the previous background-size: contain. */
+.scene {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(85vw, 141.4516129vh);
+    aspect-ratio: 3508 / 2480;
+}
+
+/* 4. Static furniture groups */
+.sleep-area {
+    position: absolute;
+    left: 0;
+    top: 50.80645161%;
+    width: 31.35689852%;
+    height: 49.19354839%;
+    z-index: 2;
+}
+
+/* Each object clips only its own section of the original transparent PNG. */
+.piece {
+    position: absolute;
+    overflow: hidden;
+}
+
+.piece img {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+}
+
+.desk, .side-table, .lounge {
+    z-index: 2;
+}
+
+.crack, .portal {
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* 5. Walls and doors */
+.wall {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background-color: #8b1e16;
+}
+
+.front-door {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 250px;
+    background-color: #000;
+}
+
+/* 6. Room 1: individual object coordinates */
+
+/* Room 1: bed; source coordinates (12, 1288), size 555 x 1163. */
+#room-1-bed {
+    left: 1.090909091%;
+    top: 2.295081967%;
+    width: 50.454545455%;
+    height: 95.327868852%;
+}
+
+#room-1-bed img {
+    left: -2.162162162%;
+    top: -110.748065348%;
+    width: 632.072072072%;
+    height: 213.241616509%;
+}
+
+/* Room 1: rug; source coordinates (641, 1454), size 454 x 569. */
+#room-1-rug {
+    left: 58.272727273%;
+    top: 15.901639344%;
+    width: 41.272727273%;
+    height: 46.639344262%;
+}
+
+#room-1-rug img {
+    left: -141.189427313%;
+    top: -255.536028120%;
+    width: 772.687224670%;
+    height: 435.852372583%;
+}
+
+/* Room 1: desk; source coordinates (25, 76), size 846 x 1076. */
+#room-1-desk {
+    left: 0.712656784%;
+    top: 3.064516129%;
+    width: 24.116305587%;
+    height: 43.387096774%;
+}
+
+#room-1-desk img {
+    left: -2.955082742%;
+    top: -7.063197026%;
+    width: 414.657210402%;
+    height: 230.483271375%;
+}
+
+/* Room 1: side-table; source coordinates (2943, 1484), size 463 x 916. */
+#room-1-side-table {
+    left: 83.893956670%;
+    top: 59.838709677%;
+    width: 13.198403649%;
+    height: 36.935483871%;
+}
+
+#room-1-side-table img {
+    left: -635.637149028%;
+    top: -162.008733624%;
+    width: 757.667386609%;
+    height: 270.742358079%;
+}
+
+/* Room 1: lounge; source coordinates (2193, 90), size 1226 x 1345. */
+#room-1-lounge {
+    left: 62.514253136%;
+    top: 3.629032258%;
+    width: 34.948688712%;
+    height: 54.233870968%;
+}
+
+#room-1-lounge img {
+    left: -178.874388254%;
+    top: -6.691449814%;
+    width: 286.133768352%;
+    height: 184.386617100%;
+}
+
+/* 7. Room 2: individual object coordinates */
+
+/* Room 2: bed; source coordinates (12, 1271), size 555 x 1180. */
+#room-2-bed {
+    left: 1.090909091%;
+    top: 0.901639344%;
+    width: 50.454545455%;
+    height: 96.721311475%;
+}
+
+#room-2-bed img {
+    left: -2.162162162%;
+    top: -107.711864407%;
+    width: 632.072072072%;
+    height: 210.169491525%;
+}
+
+/* Room 2: rug; source coordinates (641, 1454), size 454 x 569. */
+#room-2-rug {
+    left: 58.272727273%;
+    top: 15.901639344%;
+    width: 41.272727273%;
+    height: 46.639344262%;
+}
+
+#room-2-rug img {
+    left: -141.189427313%;
+    top: -255.536028120%;
+    width: 772.687224670%;
+    height: 435.852372583%;
+}
+
+/* Room 2: desk; source coordinates (25, 76), size 846 x 1076. */
+#room-2-desk {
+    left: 0.712656784%;
+    top: 3.064516129%;
+    width: 24.116305587%;
+    height: 43.387096774%;
+}
+
+#room-2-desk img {
+    left: -2.955082742%;
+    top: -7.063197026%;
+    width: 414.657210402%;
+    height: 230.483271375%;
+}
+
+/* Room 2: side-table; source coordinates (2943, 1484), size 463 x 916. */
+#room-2-side-table {
+    left: 83.893956670%;
+    top: 59.838709677%;
+    width: 13.198403649%;
+    height: 36.935483871%;
+}
+
+#room-2-side-table img {
+    left: -635.637149028%;
+    top: -162.008733624%;
+    width: 757.667386609%;
+    height: 270.742358079%;
+}
+
+/* Room 2: lounge; source coordinates (2193, 90), size 1226 x 1345. */
+#room-2-lounge {
+    left: 62.514253136%;
+    top: 3.629032258%;
+    width: 34.948688712%;
+    height: 54.233870968%;
+}
+
+#room-2-lounge img {
+    left: -178.874388254%;
+    top: -6.691449814%;
+    width: 286.133768352%;
+    height: 184.386617100%;
+}
+
+/* Room 2: crack; source coordinates (1705, 0), size 196 x 2480. */
+#room-2-crack {
+    left: 48.603192702%;
+    top: 0.000000000%;
+    width: 5.587229190%;
+    height: 100.000000000%;
+}
+
+#room-2-crack img {
+    left: -869.897959184%;
+    top: 0.000000000%;
+    width: 1789.795918367%;
+    height: 100.000000000%;
+}
+
+/* 8. Room 3: individual object coordinates */
+
+/* Room 3: bed; source coordinates (7, 1269), size 572 x 1193. */
+#room-3-bed {
+    left: 0.636363636%;
+    top: 0.737704918%;
+    width: 52.000000000%;
+    height: 97.786885246%;
+}
+
+#room-3-bed img {
+    left: -1.223776224%;
+    top: -106.370494552%;
+    width: 613.286713287%;
+    height: 207.879295893%;
+}
+
+/* Room 3: rug; source coordinates (621, 1454), size 474 x 569. */
+#room-3-rug {
+    left: 56.454545455%;
+    top: 15.901639344%;
+    width: 43.090909091%;
+    height: 46.639344262%;
+}
+
+#room-3-rug img {
+    left: -131.012658228%;
+    top: -255.536028120%;
+    width: 740.084388186%;
+    height: 435.852372583%;
+}
+
+/* Room 3: desk; source coordinates (9, 64), size 865 x 1111. */
+#room-3-desk {
+    left: 0.256556442%;
+    top: 2.580645161%;
+    width: 24.657924743%;
+    height: 44.798387097%;
+}
+
+#room-3-desk img {
+    left: -1.040462428%;
+    top: -5.760576058%;
+    width: 405.549132948%;
+    height: 223.222322232%;
+}
+
+/* Room 3: side-table; source coordinates (2915, 1474), size 491 x 926. */
+#room-3-side-table {
+    left: 83.095781072%;
+    top: 59.435483871%;
+    width: 13.996579247%;
+    height: 37.338709677%;
+}
+
+#room-3-side-table img {
+    left: -593.686354379%;
+    top: -159.179265659%;
+    width: 714.460285132%;
+    height: 267.818574514%;
+}
+
+/* Room 3: lounge; source coordinates (2169, 88), size 1257 x 1347. */
+#room-3-lounge {
+    left: 61.830102623%;
+    top: 3.548387097%;
+    width: 35.832383124%;
+    height: 54.314516129%;
+}
+
+#room-3-lounge img {
+    left: -172.553699284%;
+    top: -6.533036377%;
+    width: 279.077167860%;
+    height: 184.112843356%;
+}
+
+/* Room 3: portal; source coordinates (964, 0), size 1552 x 2480. */
+#room-3-portal {
+    left: 27.480045610%;
+    top: 0.000000000%;
+    width: 44.241733181%;
+    height: 100.000000000%;
+}
+
+#room-3-portal img {
+    left: -62.113402062%;
+    top: 0.000000000%;
+    width: 226.030927835%;
+    height: 100.000000000%;
+}
+
+/* 9. Final room: one background repeated into 5 columns and 9 rows */
+.eyes {
+    position: absolute;
+    left: 34%;
+    top: 30%;
+    width: 32%;
+    height: 44%;
+    z-index: 4;
+    background-image: url("assets/eye.png");
+    background-repeat: repeat;
+    background-size: 20% calc(100% / 9);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* The invisible area still responds to hovering. */
+.eyes:not(.js-enabled):hover,
+.eyes:not(.js-enabled):focus,
+.eyes.is-visible {
+    opacity: 1;
+}
+
+.eyes:focus-visible {
+    outline: 1px solid #8b1e16;
+    outline-offset: 4px;
+}
